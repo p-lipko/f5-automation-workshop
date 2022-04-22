@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/F5Networks/f5-appsvcs-extension/master/schema/latest/as3-schema.json",
+  "class": "AS3",
+  "action": "deploy",
+  "persist": true,
+  "declaration": {
+    "class": "ADC",
+    "schemaVersion": "3.0.0",
+    "id": "urn:uuid:76f06c5a-b673-430d-8df4-d817cb3b9f3c",
+    "label": "HTTP Application Services",
+    "remark": "HTTP layered template approach",
+    "controls": {
+      "trace": true
+    },
+        "test1": {
+      
+      "test": {
+        "class": "Application",
+        "service": {
+          "class": "Service_HTTP",
+          "virtualAddresses": ["10.1.1.20"],
+          "virtualPort": 80,
+          "pool": "web_pool"
+        },
+        "web_pool": {
+          "class": "Pool",
+          "monitors": [
+            "http"
+          ],
+          "members": [{"serverAddresses":["10.1.2.110","10.1.2.113"],"servicePort":80}]
+        }
+      },
+
+      "class": "Tenant",
+      "test1_profiles": {
+        "class": "Application",
+        "test1_http_profile": {
+          "class": "HTTP_Profile",
+          "trustXFF": true
+        },
+        "test1_http2_profile": {
+          "class": "HTTP2_Profile",
+          "enforceTlsRequirements": false
+        }
+      }
+    }
+  }
+}
