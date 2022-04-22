@@ -3,8 +3,8 @@
 # Create Web01 NIC
 resource "azurerm_network_interface" "web01-nic" {
   name                = "${local.setup.azure.prefix}-web01-nic"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 
   ip_configuration {
     name                          = "primary"
@@ -23,8 +23,8 @@ resource "azurerm_network_interface" "web01-nic" {
 # Create Web02 NIC
 resource "azurerm_network_interface" "web02-nic" {
   name                = "${local.setup.azure.prefix}-web02-nic"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 
   ip_configuration {
     name                          = "primary"
@@ -90,8 +90,8 @@ EOF
 # Create VM web01
 resource "azurerm_linux_virtual_machine" "web01" {
   name                            = "${local.setup.azure.prefix}-web01"
-  resource_group_name             = azurerm_resource_group.rg.name
-  location                        = azurerm_resource_group.rg.location
+  resource_group_name             = local.setup.azure.prefix
+  location                        = local.setup.azure.location
   network_interface_ids           = [azurerm_network_interface.web01-nic.id]
   size                            = "Standard_B1ms"
   admin_username                  = local.setup.bigip.user_name
@@ -123,8 +123,8 @@ resource "azurerm_linux_virtual_machine" "web01" {
 # Create VM web02
 resource "azurerm_linux_virtual_machine" "web02" {
   name                            = "${local.setup.azure.prefix}-web02"
-  resource_group_name             = azurerm_resource_group.rg.name
-  location                        = azurerm_resource_group.rg.location
+  resource_group_name             = local.setup.azure.prefix
+  location                        = local.setup.azure.location
   network_interface_ids           = [azurerm_network_interface.web02-nic.id]
   size                            = "Standard_B1ms"
   admin_username                  = local.setup.bigip.user_name

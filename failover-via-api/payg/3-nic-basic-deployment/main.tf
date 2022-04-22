@@ -46,16 +46,10 @@ resource "random_id" "id" {
   byte_length = 2
 }
 
-#Create Resource Group
-resource "azurerm_resource_group" "rg" {
-  name     = local.setup.azure.prefix
-  location = local.setup.azure.location
-}
-
 resource "azurerm_storage_account" "cfe_storage" {
   name                     = "${random_id.id.hex}cfestorage"
-  resource_group_name      = azurerm_resource_group.rg.name
-  location                 = azurerm_resource_group.rg.location
+  resource_group_name      = local.setup.azure.prefix
+  location                 = local.setup.azure.location
   account_tier             = "Standard"
   account_replication_type = "LRS"
 
@@ -68,15 +62,15 @@ resource "azurerm_storage_account" "cfe_storage" {
 
 resource "azurerm_ssh_public_key" "f5_key" {
   name                = format("%s-pubkey-%s", local.setup.azure.prefix, random_id.id.hex)
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
   public_key          = file("~/.ssh/id_rsa.pub")
 }
 #Create Azure Managed User Identity and Role Definition
 resource "azurerm_user_assigned_identity" "user_identity" {
   name                = "${local.setup.azure.prefix}-ident"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 }
 
 data "azurerm_subscription" "rg" {}

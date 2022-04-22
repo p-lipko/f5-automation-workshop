@@ -3,40 +3,40 @@
 # Public IP BIGIP0
 resource "azurerm_public_ip" "bigip0_mgmt_pip" {
   name                = "${local.setup.azure.prefix}-bigip0-mgmt-pip"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_pip" {
   name                = "${local.setup.azure.prefix}-bigip0-ext-pip"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_vpip_1" {
   name                = "${local.setup.azure.prefix}-bigip-ext-vpip-1"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_vpip_2" {
   name                = "${local.setup.azure.prefix}-bigip-ext-vpip-2"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_vpip_3" {
   name                = "${local.setup.azure.prefix}-bigip-ext-vpip-3"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
@@ -44,8 +44,8 @@ resource "azurerm_public_ip" "bigip0_ext_vpip_3" {
 # Network Interfaces BIGIP0
 resource "azurerm_network_interface" "bigip0_management" {
   name                = "${local.setup.azure.prefix}-bigip0-mgmt-nic"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 
   ip_configuration {
     name                          = "${local.setup.azure.prefix}-bigip0-mgmt-ip"
@@ -58,8 +58,8 @@ resource "azurerm_network_interface" "bigip0_management" {
 
 resource "azurerm_network_interface" "bigip0_external" {
   name                          = "${local.setup.azure.prefix}-bigip0-ext-nic"
-  resource_group_name           = azurerm_resource_group.rg.name
-  location                      = azurerm_resource_group.rg.location
+  resource_group_name           = local.setup.azure.prefix
+  location                      = local.setup.azure.location
   enable_accelerated_networking = true
   enable_ip_forwarding          = true
   
@@ -159,8 +159,8 @@ resource "azurerm_network_interface" "bigip0_external" {
 
 resource "azurerm_network_interface" "bigip0_internal" {
   name                          = "${local.setup.azure.prefix}-bigip0-int-nic"
-  resource_group_name           = azurerm_resource_group.rg.name
-  location                      = azurerm_resource_group.rg.location
+  resource_group_name           = local.setup.azure.prefix
+  location                      = local.setup.azure.location
   enable_accelerated_networking = true
   enable_ip_forwarding          = true
 
@@ -227,8 +227,8 @@ data "template_file" "init_file0" {
 # BIGIP0 VM
 resource "azurerm_linux_virtual_machine" "bigip0" {
   name                            = "${local.setup.azure.prefix}-bigip0"
-  resource_group_name             = azurerm_resource_group.rg.name
-  location                        = azurerm_resource_group.rg.location
+  resource_group_name             = local.setup.azure.prefix
+  location                        = local.setup.azure.location
   size                            = local.setup.bigip.instance_type
   disable_password_authentication = false
   admin_username                  = local.setup.bigip.user_name

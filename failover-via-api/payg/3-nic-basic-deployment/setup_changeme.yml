@@ -1,10 +1,10 @@
 ---
 ## Azure variables
 azure:
-  resource_group : "student100-f5-atc-workshop"
+  student_number : "<student_number>"
+  prefix         : "student<student_number>-via-api"
   location       : "westeurope"
   environment    : "azure"
-  prefix         : "student01-via-api"
   unique_string  : "studentapp"
 
 bigip:
@@ -20,30 +20,30 @@ bigip:
 
 # Network
 network:
-  cidr               : "10.1.0.0/16"
-  subnet_management  : "10.1.0.0/24"
-  subnet_external    : "10.1.1.0/24"
-  subnet_internal    : "10.1.2.0/24"
-  management_gateway : "10.1.0.1"
-  external_gateway   : "10.1.1.1"
+  cidr               : "10.<student_number>.0.0/16"
+  subnet_management  : "10.<student_number>.0.0/24"
+  subnet_external    : "10.<student_number>.1.0/24"
+  subnet_internal    : "10.<student_number>.2.0/24"
+  management_gateway : "10.<student_number>.0.1"
+  external_gateway   : "10.<student_number>.1.1"
 
 # VIPs
 vips:
-  vip-0   : "10.1.1.20"
-  vip-1   : "10.1.1.21"
-  vip-2   : "10.1.1.22"
-  vip-3   : "10.1.1.23"
-  vip-4   : "10.1.1.24"
-  vip-5   : "10.1.1.25"
-  vip-6   : "10.1.1.26"
-  vip-7   : "10.1.1.27"
-  vip-8   : "10.1.1.28"
-  vip-9   : "10.1.1.29"
+  vip-0   : "10.<student_number>.1.20"
+  vip-1   : "10.<student_number>.1.21"
+  vip-2   : "10.<student_number>.1.22"
+  vip-3   : "10.<student_number>.1.23"
+  vip-4   : "10.<student_number>.1.24"
+  vip-5   : "10.<student_number>.1.25"
+  vip-6   : "10.<student_number>.1.26"
+  vip-7   : "10.<student_number>.1.27"
+  vip-8   : "10.<student_number>.1.28"
+  vip-9   : "10.<student_number>.1.29"
 
 # Change the Webserver IP host address B-octet that it matches your student_number
 web:
-  poolmember-1           : "10.1.2.101"
-  poolmember-2           : "10.1.2.102"
+  poolmember-1           : "10.<student_number>.2.101"
+  poolmember-2           : "10.<student_number>.2.102"
   service_discovery_value: "production"
 
 

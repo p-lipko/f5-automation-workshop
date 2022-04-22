@@ -3,8 +3,8 @@
 # Create Network Security Groups
 resource "azurerm_network_security_group" "mgmtnsg" {
   name                = "${local.setup.azure.prefix}-mgmtnsg"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 
   security_rule {
     name                       = "allow_SSH"
@@ -40,8 +40,8 @@ resource "azurerm_network_security_group" "mgmtnsg" {
 
 resource "azurerm_network_security_group" "extnsg" {
   name                = "${local.setup.azure.prefix}-extnsg"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 
   security_rule {
     name                       = "allow_SSH"
@@ -103,8 +103,8 @@ resource "azurerm_network_security_group" "extnsg" {
 
 resource "azurerm_network_security_group" "intnsg" {
   name                = "${local.setup.azure.prefix}-intnsg"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = azurerm_resource_group.rg.location
+  resource_group_name = local.setup.azure.prefix
+  location            = local.setup.azure.location
 
   security_rule {
     name                       = "allow_SSH"
