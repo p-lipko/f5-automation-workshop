@@ -103,9 +103,8 @@ resource "azurerm_network_interface_security_group_association" "bigip1_intnsg" 
 }
 
 # Onboard Template BIGIP1
-data "template_file" "init_file1" {
-  template = file("${path.module}/onboard.tpl")
-  vars = {
+locals {
+  bigip_onboard1 = templatefile("${path.module}/onboard.tpl", {
     INIT_URL                = local.setup.f5_atc.INIT_URL
     DO_URL                  = local.setup.f5_atc.DO_URL
     AS3_URL                 = local.setup.f5_atc.AS3_URL
@@ -128,7 +127,7 @@ data "template_file" "init_file1" {
     management_gateway      = local.setup.network.management_gateway
     external_gateway        = local.setup.network.external_gateway
     f5_cloud_failover_label = "${local.setup.azure.prefix}-failover-label"
-  }
+  })
 }
 
 # BIGIP1 VM
@@ -142,7 +141,7 @@ resource "azurerm_linux_virtual_machine" "bigip1" {
   admin_username                  = local.setup.bigip.user_name
   admin_password                  = local.setup.bigip.user_password
   network_interface_ids           = [azurerm_network_interface.bigip1_management.id, azurerm_network_interface.bigip1_external.id, azurerm_network_interface.bigip1_internal.id]
-  custom_data                     = base64encode(data.template_file.init_file1.rendered)
+  custom_data                     = base64encode(local.bigip_onboard1)
 
   admin_ssh_key {
     username   = local.setup.bigip.user_name

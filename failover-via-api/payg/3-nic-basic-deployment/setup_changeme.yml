@@ -24,6 +24,7 @@ network:
   subnet_management  : "10.<student_number>.0.0/24"
   subnet_external    : "10.<student_number>.1.0/24"
   subnet_internal    : "10.<student_number>.2.0/24"
+  subnet_webserver   : "10.<student_number>.3.0/24"
   management_gateway : "10.<student_number>.0.1"
   external_gateway   : "10.<student_number>.1.1"
 

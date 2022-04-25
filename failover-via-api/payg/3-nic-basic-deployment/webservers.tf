@@ -8,7 +8,7 @@ resource "azurerm_network_interface" "web01-nic" {
 
   ip_configuration {
     name                          = "primary"
-    subnet_id                     = azurerm_subnet.internal.id
+    subnet_id                     = azurerm_subnet.webserver.id
     private_ip_address_allocation = "Static"
     private_ip_address            = local.setup.web.poolmember-1
     primary                       = true
@@ -28,7 +28,7 @@ resource "azurerm_network_interface" "web02-nic" {
 
   ip_configuration {
     name                          = "primary"
-    subnet_id                     = azurerm_subnet.internal.id
+    subnet_id                     = azurerm_subnet.webserver.id
     private_ip_address_allocation = "Static"
     private_ip_address            = local.setup.web.poolmember-2
     primary                       = true

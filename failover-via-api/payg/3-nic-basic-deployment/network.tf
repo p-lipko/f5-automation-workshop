@@ -1,4 +1,4 @@
-#Create the VNET
+#Create the VNET BIGIP environment
 resource "azurerm_virtual_network" "vnet" {
   name                = "${local.setup.azure.prefix}-vnet"
   resource_group_name = local.setup.azure.prefix
@@ -26,6 +26,13 @@ resource "azurerm_subnet" "internal" {
   resource_group_name  = local.setup.azure.prefix
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = [local.setup.network.subnet_internal]
+}
+
+resource "azurerm_subnet" "webserver" {
+  name                 = "${local.setup.azure.prefix}-web"
+  resource_group_name  = local.setup.azure.prefix
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = [local.setup.network.subnet_webserver]
 }
 
 # Azure Route Table to Support CFE
