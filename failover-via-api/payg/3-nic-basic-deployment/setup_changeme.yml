@@ -9,8 +9,8 @@ azure:
 
 bigip:
 #Creds
-  user_name    : admin
-  user_password: <<CHANGEME>>
+  user_name    : azureuser
+  user_password: f5emea2022!
 
 # BIGIP instance specifics
   instance_type   : "Standard_DS3_v2"

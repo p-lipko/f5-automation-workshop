@@ -1,4 +1,4 @@
-# Task 1.1 Explore and start the lab environment for UDF users
+# Task 1.1 - Explore and start the lab environment for UDF users
 
 
 **Note:**
@@ -66,23 +66,21 @@ and
 
 **cp setup_changeme.yml setup.yml**
 
-**Step 10:** Select **‘setup.yml’** and in the file select **<student_number>** and right-click an select **‘Copy’**.
+**Step 10:** Select **‘setup.yml’** and in the file select **<student_number>** and right-click and select **‘Copy’**.
 
 ![](../png/module1/task1_1_p9.png)
 
-**Step 11:** Type **‘Ctrl+H’** to search and replace the label into your actual student number. This has been assigned to you when being in the workshop. The picture shows ‘1’, but this most be your assigned student number! And click to replace it either at once or piece by piece to understand what you are replacing.
- 
-![](../png/module1/task1_1_p10.png)
+**Step 11:** Type **‘Ctrl+H’** to search and replace the label into your actual student number. This has been assigned to you when being in the workshop. The picture shows ‘100’, but this **'most'** be your assigned student number! And click to replace it either at once or piece by piece to understand what you are replacing.
 
 **Step 12:** As a result, you should see that everywhere the label **<student_number>** is replaced by **‘<your_assigned_student_number>’**. This counts for the student_number, and all B-octets of defined IP ranges and IP host addresses.
 
-**Step 13:** Close the search and replace window and save the changes by pressing **‘Ctrl+S’**. Not saving the changes will make terraform fail!
+**Step 13:** Don't forget to **'CHANGE'** the user_password into a strong password like eg. 'F5emea2022!' or a strong random password and make sure yhou store it somwhere.
 
-**Step 14:** In the terminal we first need to navigate to the right directory: **cd f5-atc-workshop**
+**Step 14:** Close the search and replace window and save the changes by pressing **‘Ctrl+S’**. Not saving the changes will make terraform fail!
 
 **Step 15:** In the terminal type: **terraform init**
  
-![](../png/module1/task1_1_p11.png)
+![](../png/module1/task1_1_p10.png)
 
 You should see this output.
 
@@ -92,7 +90,7 @@ You should see this output.
 
 Terraform will take about ~5min to deploy the infrastructure. Time for coffee!
 
-![](../png/module1/task1_1_p12.png)
+![](../png/module1/task1_1_p11.png)
 
 When all is deployed, you should see this output.
 

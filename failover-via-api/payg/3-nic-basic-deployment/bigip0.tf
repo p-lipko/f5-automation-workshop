@@ -62,7 +62,7 @@ resource "azurerm_network_interface" "bigip0_external" {
   location                      = local.setup.azure.location
   enable_accelerated_networking = true
   enable_ip_forwarding          = true
-  
+
   ip_configuration {
     name                          = "${local.setup.azure.prefix}-bigip0-ext-ip"
     subnet_id                     = azurerm_subnet.external.id
@@ -212,10 +212,10 @@ data "template_file" "init_file0" {
     FAST_VER                = split("/", local.setup.f5_atc.FAST_URL)[7]
     user_name               = local.setup.bigip.user_name
     user_password           = local.setup.bigip.user_password
-    host_name               = "${local.setup.azure.prefix}-bigip0" 
-    host_name_0             = "${local.setup.azure.prefix}-bigip0" 
+    host_name               = "${local.setup.azure.prefix}-bigip0"
+    host_name_0             = "${local.setup.azure.prefix}-bigip0"
     host_name_1             = "${local.setup.azure.prefix}-bigip1"
-    remote_host_int         = "/Common/failoverGroup/members/0" 
+    remote_host_int         = "/Common/failoverGroup/members/0"
     self_ip_external        = azurerm_network_interface.bigip0_external.private_ip_address
     self_ip_internal        = azurerm_network_interface.bigip0_internal.private_ip_address
     management_gateway      = local.setup.network.management_gateway
@@ -242,7 +242,7 @@ resource "azurerm_linux_virtual_machine" "bigip0" {
   }
 
   identity {
-    type         = "SystemAssigned"
+    type = "SystemAssigned"
     //identity_ids = [azurerm_user_assigned_identity.user_identity.id]
   }
 

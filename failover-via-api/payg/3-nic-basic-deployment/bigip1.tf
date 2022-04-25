@@ -55,10 +55,10 @@ resource "azurerm_network_interface" "bigip1_external" {
   }
 
   //ip_configuration {
-    //name                          = "${local.setup.azure.prefix}-bigip1-ext-vip"
-    //subnet_id                     = azurerm_subnet.external.id
-    //private_ip_address_allocation = "Dynamic"
-    //public_ip_address_id          = azurerm_public_ip.bigip1_ext_vpip.id
+  //name                          = "${local.setup.azure.prefix}-bigip1-ext-vip"
+  //subnet_id                     = azurerm_subnet.external.id
+  //private_ip_address_allocation = "Dynamic"
+  //public_ip_address_id          = azurerm_public_ip.bigip1_ext_vpip.id
   //}
 
   tags = {
@@ -120,7 +120,7 @@ data "template_file" "init_file1" {
     user_name               = local.setup.bigip.user_name
     user_password           = local.setup.bigip.user_password
     host_name               = "${local.setup.azure.prefix}-bigip1"
-    host_name_0             = "${local.setup.azure.prefix}-bigip0" 
+    host_name_0             = "${local.setup.azure.prefix}-bigip0"
     host_name_1             = "${local.setup.azure.prefix}-bigip1"
     remote_host_int         = azurerm_network_interface.bigip0_internal.private_ip_address
     self_ip_external        = azurerm_network_interface.bigip1_external.private_ip_address
@@ -149,7 +149,7 @@ resource "azurerm_linux_virtual_machine" "bigip1" {
   }
 
   identity {
-    type         = "SystemAssigned"
+    type = "SystemAssigned"
     //identity_ids = [azurerm_user_assigned_identity.user_identity.id]
   }
 

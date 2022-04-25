@@ -22,7 +22,7 @@ terraform {
       version = "2.1.0"
     }
     bigip = {
-      source = "F5Networks/bigip"
+      source  = "F5Networks/bigip"
       version = "1.13.1"
     }
   }
@@ -38,7 +38,7 @@ provider "azurerm" {
 
 locals {
   setup = yamldecode(file(var.setupfile))
-  tmp = yamldecode(file(var.tmpfile))
+  tmp   = yamldecode(file(var.tmpfile))
 }
 
 # Create a random id
@@ -66,6 +66,7 @@ resource "azurerm_ssh_public_key" "f5_key" {
   location            = local.setup.azure.location
   public_key          = file("~/.ssh/id_rsa.pub")
 }
+
 #Create Azure Managed User Identity and Role Definition
 resource "azurerm_user_assigned_identity" "user_identity" {
   name                = "${local.setup.azure.prefix}-ident"
@@ -76,15 +77,15 @@ resource "azurerm_user_assigned_identity" "user_identity" {
 data "azurerm_subscription" "rg" {}
 
 resource "azurerm_role_assignment" "bigip0_contributor" {
-  scope                = data.azurerm_subscription.rg.id
-  role_definition_id   = "${data.azurerm_subscription.rg.id}${data.azurerm_role_definition.contributor.id}"
-  principal_id         = lookup(azurerm_linux_virtual_machine.bigip0.identity[0], "principal_id")
+  scope              = data.azurerm_subscription.rg.id
+  role_definition_id = "${data.azurerm_subscription.rg.id}${data.azurerm_role_definition.contributor.id}"
+  principal_id       = lookup(azurerm_linux_virtual_machine.bigip0.identity[0], "principal_id")
 }
 
 resource "azurerm_role_assignment" "bigip1_contributor" {
-  scope                = data.azurerm_subscription.rg.id
-  role_definition_id   = "${data.azurerm_subscription.rg.id}${data.azurerm_role_definition.contributor.id}"
-  principal_id         = lookup(azurerm_linux_virtual_machine.bigip1.identity[0], "principal_id")
+  scope              = data.azurerm_subscription.rg.id
+  role_definition_id = "${data.azurerm_subscription.rg.id}${data.azurerm_role_definition.contributor.id}"
+  principal_id       = lookup(azurerm_linux_virtual_machine.bigip1.identity[0], "principal_id")
 }
 
 data "azurerm_role_definition" "contributor" {
