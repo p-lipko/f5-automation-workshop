@@ -1,9 +1,9 @@
 # Task 1.1 - Explore and start the lab environment for UDF users
 
-
-**Note:**
-*Non-UDF users can skip this section ans go straight to task1.2 which is about peparing Postman*
-
+```
+Note:
+Non-UDF users can skip this section ans go straight to task1.2 which is about peparing Postman*
+```
 
 **Step 1:** From UDF, start an RDP session to the Jumphost. For modern laptops it might be a suggestion to use the 1440x900 resolution to keep things readable in the remote session.
 
@@ -88,10 +88,17 @@ You should see this output.
 
 **Step 17:** Finally type: **terraform apply -auto-approve**
 
-Terraform will take about ~5min to deploy the infrastructure. Time for coffee!
+Terraform will take about ~10min to deploy the infrastructure. Time for coffee!
+* After ~3 minutes you will see underneath output.
+* After ~10 minutes the BIG-IPs are up and clustered.
+
+After the 3 minutes you can login, but don't touch anything, otherwise you will disrupt the deployment process.
 
 ![](../png/module1/task1_1_p11.png)
 
 When all is deployed, you should see this output.
 
-**Step 18:** Use your Azure credentials to open the Azure portal and select your resource group referenced by your student number. You should see all the deployed infrastructure objects.
+```
+Note: 
+Public IPs will be different
+```

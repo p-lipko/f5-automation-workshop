@@ -63,7 +63,7 @@ locals {
       - apt-get update -y
       - apt-get -y install docker.io
       - sleep 30
-      - docker run --name f5demo -p 80:80 -p 443:443 -d f5devcentral/f5-demo-app:latest
+      - docker run --name f5demo --restart always -p 80:80 -p 443:443 -d f5devcentral/f5-demo-app:latest
 
     final_message: "The system is finally up, after $UPTIME seconds"
 EOF
@@ -81,7 +81,7 @@ EOF
 #       - apt-get update -y
 #       - apt-get -y install docker.io
 #       - sleep 30
-#       - docker run --name f5demo -p 80:80 -p 443:443 -d f5devcentral/f5-demo-app:latest
+#       - docker run --name f5demo --restart always -p 80:80 -p 443:443 -d f5devcentral/f5-demo-app:latest
 
 #     final_message: "The system is finally up, after $UPTIME seconds"
 # EOF

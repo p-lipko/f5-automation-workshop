@@ -9,8 +9,8 @@ azure:
 
 bigip:
 #Creds
-  user_name    : azureuser
-  user_password: f5emea2022!
+  user_name    : azureuser    # Don't change to 'admin'
+  user_password: F5emea2022!  # Always use a strong password
 
 # BIGIP instance specifics
   instance_type   : "Standard_DS3_v2"
@@ -43,8 +43,8 @@ vips:
 
 # Change the Webserver IP host address B-octet that it matches your student_number
 web:
-  poolmember-1           : "10.<student_number>.2.101"
-  poolmember-2           : "10.<student_number>.2.102"
+  poolmember-1           : "10.<student_number>.3.101"
+  poolmember-2           : "10.<student_number>.3.102"
   service_discovery_value: "production"
 
 
