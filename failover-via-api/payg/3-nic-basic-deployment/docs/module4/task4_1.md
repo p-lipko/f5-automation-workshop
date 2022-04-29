@@ -1,4 +1,4 @@
-# 4.1 - Deploy Applications with FAST
+# 4.1 - Deploy Applications with FAST via the GUI
 
 Let's explore FAST on the BIG-IP and start to make use of it to deploy simple applications in order to see how enterprises can benefit from using organized templates.
 
@@ -21,6 +21,7 @@ Questions:
 Questions:
 * For what use case is the blue-green template usefull?
 * Does the HTTP Application Template include the possibility to include WAF?
+* Note: The **example** FAST templates are for demo purposes only.
 
 **Step 4:** In the FAST window select **HTTP Application Template** and fill in the following values and click **Deploy**.
 

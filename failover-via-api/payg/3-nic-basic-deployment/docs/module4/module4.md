@@ -13,3 +13,8 @@ AS3 applications deployed through FAST can be managed using FAST. FAST auto-gene
 The extension comes with a base set of templates for common use cases such as TCP or HTTPS. New templates can be created to satisfy specific needs of any infrastructure.
 
 More information about FAST can be found on F5 Clouddocs: https://clouddocs.f5.com/products/extensions/f5-appsvcs-templates/latest/
+
+```
+Note:
+Module 4 covers the use of FAST and not the creation of custom templates with FAST. If you want to know more about FAST template creation, please use the above link to go to the FAST documentation.
+```
