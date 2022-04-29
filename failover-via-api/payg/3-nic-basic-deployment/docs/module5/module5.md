@@ -2,7 +2,11 @@
 
 In module 4 we started to make use of the VSC F5 Extension and experienced the power of the tool while using it to deploying FAST templates a connected BIG-IP.
 
+## F5 Automation Config Converter (ACC)
 Another capability of the F5 Extension is to support F5 Automation Config Converter (ACC). During this module you will learn how you can make use of ACC through the extension.
+
+Configurations can be imported from UCS, SCF and .conf files and is able to convert to Declarative Onboarding (DO) and AS3. There are some restrictions which you can find in the docs.
+An important note is that ACC does not support ASM and APM policy conversions.
 
 More reading about ACC can be done here: https://clouddocs.f5.com/products/extensions/f5-automation-config-converter/latest/
 
