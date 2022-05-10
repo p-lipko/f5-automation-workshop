@@ -3,40 +3,40 @@
 # Public IP BIGIP0
 resource "azurerm_public_ip" "bigip0_mgmt_pip" {
   name                = "${local.setup.azure.prefix}-bigip0-mgmt-pip"
-  resource_group_name = local.setup.azure.prefix
-  location            = local.setup.azure.location
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_pip" {
   name                = "${local.setup.azure.prefix}-bigip0-ext-pip"
-  resource_group_name = local.setup.azure.prefix
-  location            = local.setup.azure.location
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_vpip_1" {
   name                = "${local.setup.azure.prefix}-bigip-ext-vpip-1"
-  resource_group_name = local.setup.azure.prefix
-  location            = local.setup.azure.location
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_vpip_2" {
   name                = "${local.setup.azure.prefix}-bigip-ext-vpip-2"
-  resource_group_name = local.setup.azure.prefix
-  location            = local.setup.azure.location
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
 
 resource "azurerm_public_ip" "bigip0_ext_vpip_3" {
   name                = "${local.setup.azure.prefix}-bigip-ext-vpip-3"
-  resource_group_name = local.setup.azure.prefix
-  location            = local.setup.azure.location
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
   sku                 = "Standard"
   allocation_method   = "Static"
 }
@@ -44,8 +44,8 @@ resource "azurerm_public_ip" "bigip0_ext_vpip_3" {
 # Network Interfaces BIGIP0
 resource "azurerm_network_interface" "bigip0_management" {
   name                = "${local.setup.azure.prefix}-bigip0-mgmt-nic"
-  resource_group_name = local.setup.azure.prefix
-  location            = local.setup.azure.location
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
 
   ip_configuration {
     name                          = "${local.setup.azure.prefix}-bigip0-mgmt-ip"
@@ -58,11 +58,11 @@ resource "azurerm_network_interface" "bigip0_management" {
 
 resource "azurerm_network_interface" "bigip0_external" {
   name                          = "${local.setup.azure.prefix}-bigip0-ext-nic"
-  resource_group_name           = local.setup.azure.prefix
-  location                      = local.setup.azure.location
+  resource_group_name           = azurerm_resource_group.rg.name
+  location                      = azurerm_resource_group.rg.location
   enable_accelerated_networking = true
   enable_ip_forwarding          = true
-
+  
   ip_configuration {
     name                          = "${local.setup.azure.prefix}-bigip0-ext-ip"
     subnet_id                     = azurerm_subnet.external.id
@@ -159,8 +159,8 @@ resource "azurerm_network_interface" "bigip0_external" {
 
 resource "azurerm_network_interface" "bigip0_internal" {
   name                          = "${local.setup.azure.prefix}-bigip0-int-nic"
-  resource_group_name           = local.setup.azure.prefix
-  location                      = local.setup.azure.location
+  resource_group_name           = azurerm_resource_group.rg.name
+  location                      = azurerm_resource_group.rg.location
   enable_accelerated_networking = true
   enable_ip_forwarding          = true
 
@@ -196,8 +196,9 @@ resource "azurerm_network_interface_security_group_association" "bigip0_intnsg" 
 }
 
 # Onboard Template BIGIP0
-locals {
-  bigip_onboard0 = templatefile("${path.module}/onboard.tpl", {
+data "template_file" "init_file0" {
+  template = file("${path.module}/onboard.tpl")
+  vars = {
     INIT_URL                = local.setup.f5_atc.INIT_URL
     DO_URL                  = local.setup.f5_atc.DO_URL
     AS3_URL                 = local.setup.f5_atc.AS3_URL
@@ -211,33 +212,29 @@ locals {
     FAST_VER                = split("/", local.setup.f5_atc.FAST_URL)[7]
     user_name               = local.setup.bigip.user_name
     user_password           = local.setup.bigip.user_password
-    host_name               = "${local.setup.azure.prefix}-bigip0"
-    host_name_0             = "${local.setup.azure.prefix}-bigip0"
+    host_name               = "${local.setup.azure.prefix}-bigip0" 
+    host_name_0             = "${local.setup.azure.prefix}-bigip0" 
     host_name_1             = "${local.setup.azure.prefix}-bigip1"
-    remote_host_int         = "/Common/failoverGroup/members/0"
+    remote_host_int         = "/Common/failoverGroup/members/0" 
     self_ip_external        = azurerm_network_interface.bigip0_external.private_ip_address
     self_ip_internal        = azurerm_network_interface.bigip0_internal.private_ip_address
     management_gateway      = local.setup.network.management_gateway
     external_gateway        = local.setup.network.external_gateway
     f5_cloud_failover_label = "${local.setup.azure.prefix}-failover-label"
-    unique_string           = local.setup.azure.unique_string
-    workspace_id            = azurerm_log_analytics_workspace.law.workspace_id
-    primary_key             = azurerm_log_analytics_workspace.law.primary_shared_key
-  })
+  }
 }
 
 # BIGIP0 VM
 resource "azurerm_linux_virtual_machine" "bigip0" {
   name                            = "${local.setup.azure.prefix}-bigip0"
-  resource_group_name             = local.setup.azure.prefix
-  location                        = local.setup.azure.location
+  resource_group_name             = azurerm_resource_group.rg.name
+  location                        = azurerm_resource_group.rg.location
   size                            = local.setup.bigip.instance_type
-  zone                            = 1
   disable_password_authentication = false
   admin_username                  = local.setup.bigip.user_name
   admin_password                  = local.setup.bigip.user_password
   network_interface_ids           = [azurerm_network_interface.bigip0_management.id, azurerm_network_interface.bigip0_external.id, azurerm_network_interface.bigip0_internal.id]
-  custom_data                     = base64encode(local.bigip_onboard0)
+  custom_data                     = base64encode(data.template_file.init_file0.rendered)
 
   admin_ssh_key {
     username   = local.setup.bigip.user_name
@@ -245,7 +242,7 @@ resource "azurerm_linux_virtual_machine" "bigip0" {
   }
 
   identity {
-    type = "SystemAssigned"
+    type         = "SystemAssigned"
     //identity_ids = [azurerm_user_assigned_identity.user_identity.id]
   }
 

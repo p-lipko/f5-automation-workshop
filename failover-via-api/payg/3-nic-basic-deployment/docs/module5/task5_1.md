@@ -48,13 +48,13 @@ Be sure:
 * Remove the ',' after the poolmember ip address entry
 ```
 
-Save all changes to the AS3 declaration using Ctrl+s and give it the name **http_application.json**. It doesn't matter where the file gets saved, this is a don't care.
+Save all changes to the AS3 declaration using Ctrl+s and give it the name **https_web_application.json**. It doesn't matter where the file gets saved, this is a don't care.
 
 ![](../png/module5/task5_1_p9.png)
 
 (Omitted output)
 
-**Step 7:** Declare the AS3 template by right-clicking and selecting **POST as AS3 Declaration** abd watch the response.
+**Step 7:** Declare the AS3 template by right-clicking and selecting **POST as AS3 Declaration** and watch the response.
 
 ![](../png/module5/task5_1_p10.png)
 
@@ -63,6 +63,6 @@ Save all changes to the AS3 declaration using Ctrl+s and give it the name **http
 ![](../png/module5/task5_1_p11.png)
 
 ## Summary
-F5 Automation Config Converter (ACC) is part of the F5 Automation Toolchain family and can be leveraged to convert object-based BIG-IP configurations into DO and AS3 declarations. ACC creates a 1-to-1 translation from object-based into AS3 supported JSON syntax.
+F5 Automation Config Converter (ACC) is part of the F5 Automation Toolchain family and can be leveraged to convert object-based BIG-IP configurations into DO and AS3 declarations. ACC creates a 1-to-1 translation from object-based into AS3 supported JSON syntax. 
 
-Through the task we have seen that in order to switch from Common to a tenant specific AS3 declaration you need to tune things yourself, but this is just a minor task compared to having to rewrite the object-based config into an AS3 declaration yourself.
+ACC translates per application and this gives the ability to modify from Common to a tenant specific AS3 declaration.
