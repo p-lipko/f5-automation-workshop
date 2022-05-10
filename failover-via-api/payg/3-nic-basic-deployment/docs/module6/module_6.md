@@ -9,4 +9,6 @@ What you will learn:
 * Going through the failover via-api process.
 * Upgrading BIG-IP public cloud instances.
 * Updating BIG-IP TMOS.
-* (Troubleshooting
+* (Troubleshooting)
+
+[PREVIOUS](module_5/task5_1.md)      [NEXT](module_6/task6_1.md)

@@ -47,3 +47,5 @@ and:
 
 ## Use Case Summary
 FAST allows for deploying applications via the GUI or API and delivers a way to standardize defined app services functions within pre-defined templates and which can be custom tailored.
+
+[PREVIOUS](module_4/task4_1.md)      [NEXT](module_4/task4_3.md)

@@ -45,3 +45,5 @@ Testing:
 
 ## Use Case Summary
 Changing a configuration or adding a new application with AS3 allways go with the POST HTTPS method.
+
+[PREVIOUS](module_3/tas3_4.md)      [NEXT](module_3/task3_6.md)

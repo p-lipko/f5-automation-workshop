@@ -1,4 +1,4 @@
-# Task 1.1 - Explore and start the lab environment for UDF users
+# 1.1 - Explore and start the lab environment for UDF users
 
 ```
 Note:
@@ -102,3 +102,5 @@ When all is deployed, you should see this output.
 Note: 
 Public IPs will be different
 ```
+
+[PREVIOUS](module_1/module1.md)      [NEXT](module_2/module2.md)

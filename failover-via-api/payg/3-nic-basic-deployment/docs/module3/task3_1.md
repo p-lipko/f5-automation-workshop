@@ -71,3 +71,5 @@ Notice that when checked through the created partitions the pool config is greye
 AS3 is capable of using /Common as a shared partition and allows someone to declare 'shared' objects where different applications, declared in different tenants can use these shared objects.
 
 Changing the configuration of an object in /Common will effect all applications which use this object.
+
+[PREVIOUS](module_3/module3.md)      [NEXT](module_3/task3_2.md)

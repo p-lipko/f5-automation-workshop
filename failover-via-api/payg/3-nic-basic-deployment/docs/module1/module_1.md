@@ -7,3 +7,5 @@ Tasks to complete for this module are:
 -	Clone the relevant files from Github
 -	Make Visual Studio Code ready to use
 -	Deploy the infrastructure
+
+[PREVIOUS](../Getting_started.md)      [NEXT](module_1/task1_1.md)

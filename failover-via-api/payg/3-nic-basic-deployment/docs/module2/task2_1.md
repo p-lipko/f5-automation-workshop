@@ -1,4 +1,4 @@
-# Task 2.1 - Automation through Terraform
+# 2.1 - Automation through Terraform
 
 In the previous module we made use of Terraform to deploy BIG-IPs in Azure. So, what is Terraform?
 
@@ -62,3 +62,5 @@ and then select **cloud-automation-workshop > failover-via-api > payg > 3-nic-ba
 ![](../png/module2/task2_1_p7.png)
 
 ## Terraform.tfstate
+
+[PREVIOUS](module_2/module2.md)      [NEXT](module_2/task2_2.md)

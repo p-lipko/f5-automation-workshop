@@ -40,3 +40,5 @@ Terraform defines the public and private IP associated to the selfIPs dynamicall
 
 ![](png/getting_started/p3.png)
 
+[PREVIOUS](../README.md)      [NEXT](module_1/module1.md)
+

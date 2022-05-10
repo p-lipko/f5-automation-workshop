@@ -1,4 +1,4 @@
-# Task 2.2 - Automated BIG-IP Design Deployment
+# 2.2 - Automated BIG-IP Design Deployment
 
 Topics which will get discussed in this section are:
 * BIG-IP automated deployment
@@ -63,3 +63,5 @@ Using Cloud Failover Extension has three main benefits:
 * Lifecycle and Supportability: You can upgrade BIG-IP without having to call F5 support to fix failover.
 
 You can read and explore more of Cloud Failover Extension at F5 Clouddocs: https://clouddocs.f5.com/products/extensions/f5-cloud-failover/latest/userguide/overview.html#
+
+[PREVIOUS](module_2/tas2_1.md)      [NEXT](module_2/task2_3.md)

@@ -82,4 +82,6 @@ The **Dutch** flag is on purpose in the logging all the others are a spontanous 
 ![](../png/module6/task6_1_p9.png)
 
 * When you scroll down below you will see that the system charts of **Instance Throughput** and **InstanceCPU** are visible. Remember that this was defined in the TS section of the **onboard.tpl** script.
-* When you select the IP address at **WAF Violations by Unique Source IPs** the sectin below shows the violations in more detail.
+* When you select the IP address at **WAF Violations by Unique Source IPs** the section below shows the violations in more detail.
+
+[PREVIOUS](module_6/module6.md)      [NEXT](module_6/task6_2.md)

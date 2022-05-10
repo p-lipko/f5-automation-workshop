@@ -61,3 +61,5 @@ VIP-1 public address can be found via several ways:
 * In the VSC terminal go back to folder **3-nic-basic-deployment** and type **terraform output**
 
 ![](../png/module4/task4_1_p11.png)
+
+[PREVIOUS](module_4/module4.md)      [NEXT](module_4/task4_2.md)
