@@ -19,4 +19,4 @@ Note:
 Module 4 covers the use of FAST and not the creation of custom templates with FAST. If you want to know more about FAST template creation, please use the above link to go to the FAST documentation.
 ```
 
-[PREVIOUS](module_3/task3_7.md)      [NEXT](module_4/task4_1.md)
+[PREVIOUS](../module_3/task3_7.md)      [NEXT](../module_4/task4_1.md)
