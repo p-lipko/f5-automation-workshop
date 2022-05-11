@@ -45,6 +45,7 @@ resource "azurerm_network_interface" "bigip1_external" {
   resource_group_name           = local.setup.azure.prefix
   location                      = local.setup.azure.location
   enable_accelerated_networking = true
+  enable_ip_forwarding          = true
 
   ip_configuration {
     name                          = "${local.setup.azure.prefix}-bigip1-ext-ip"
@@ -138,7 +139,7 @@ resource "azurerm_linux_virtual_machine" "bigip1" {
   name                            = "${local.setup.azure.prefix}-bigip1"
   resource_group_name             = local.setup.azure.prefix
   location                        = local.setup.azure.location
-  size                            = local.setup.bigip.instance_type
+  size                            = local.setup.bigip.instance_type_2
   zone                            = 2
   disable_password_authentication = false
   admin_username                  = local.setup.bigip.user_name

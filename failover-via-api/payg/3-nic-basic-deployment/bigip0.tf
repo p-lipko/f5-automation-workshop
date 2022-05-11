@@ -231,7 +231,7 @@ resource "azurerm_linux_virtual_machine" "bigip0" {
   name                            = "${local.setup.azure.prefix}-bigip0"
   resource_group_name             = local.setup.azure.prefix
   location                        = local.setup.azure.location
-  size                            = local.setup.bigip.instance_type
+  size                            = local.setup.bigip.instance_type_2
   zone                            = 1
   disable_password_authentication = false
   admin_username                  = local.setup.bigip.user_name
