@@ -102,4 +102,7 @@ Notice:
 Question:
 * Is the declaration in cfe.json different from the declared file during runtime.init?
 
-[PREVIOUS](../module_6/task6_1.md)      [NEXT](../module_6/task6_3.md)
+[PREVIOUS](../module_6/task6_1.md)
+
+
+# END
