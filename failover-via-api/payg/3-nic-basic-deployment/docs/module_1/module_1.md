@@ -8,4 +8,4 @@ Tasks to complete for this module are:
 -	Make Visual Studio Code ready to use
 -	Deploy the infrastructure
 
-[PREVIOUS](../Getting_started.md)      [NEXT](module_1/task1_1.md)
+[PREVIOUS](../Getting_started.md)      [NEXT](../module_1/task1_1.md)
