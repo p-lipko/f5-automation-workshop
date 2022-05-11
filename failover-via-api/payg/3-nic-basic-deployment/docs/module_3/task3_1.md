@@ -72,4 +72,4 @@ AS3 is capable of using /Common as a shared partition and allows someone to decl
 
 Changing the configuration of an object in /Common will effect all applications which use this object.
 
-[PREVIOUS](module_3/module3.md)      [NEXT](module_3/task3_2.md)
+[PREVIOUS](module_3/module_3.md)      [NEXT](module_3/task3_2.md)
