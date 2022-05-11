@@ -103,4 +103,4 @@ Note:
 Public IPs will be different
 ```
 
-[PREVIOUS](module_1/module_1.md)      [NEXT](../module_2/module_2.md)
+[PREVIOUS](module_1/module_1.md)      [NEXT](module_2/module_2.md)
