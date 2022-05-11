@@ -63,4 +63,4 @@ and then select **cloud-automation-workshop > failover-via-api > payg > 3-nic-ba
 
 ## Terraform.tfstate
 
-[PREVIOUS](module_2/module_2.md)      [NEXT](module_2/task2_2.md)
+[PREVIOUS](../module_2/module_2.md)      [NEXT](../module_2/task2_2.md)

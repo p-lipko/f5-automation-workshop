@@ -11,4 +11,4 @@ For this workshop Terraform has been seledted as the tool to automate the enviro
 
 An alternative way would be to use Cloud Solution Templates for Azure (https://github.com/F5Networks/f5-azure-arm-templates-v2), using Ansible or another REST API supported tool.
 
-[PREVIOUS](module_1/task1_1.md)      [NEXT](module_2/task2_1.md)
+[PREVIOUS](../module_1/task1_1.md)      [NEXT](../module_2/task2_1.md)

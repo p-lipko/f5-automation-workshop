@@ -64,4 +64,4 @@ Using Cloud Failover Extension has three main benefits:
 
 You can read and explore more of Cloud Failover Extension at F5 Clouddocs: https://clouddocs.f5.com/products/extensions/f5-cloud-failover/latest/userguide/overview.html#
 
-[PREVIOUS](module_2/tas2_1.md)      [NEXT](module_2/task2_3.md)
+[PREVIOUS](../module_2/tas2_1.md)      [NEXT](../module_2/task2_3.md)

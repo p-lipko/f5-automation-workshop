@@ -54,4 +54,4 @@ Checkout the tag **self_ips** key/value pair and notice that it includes the int
 
 The BIG-IP Virtual Servers will be used throughout the next modules and also the use case of failing over will be in an upcomming module.
 
-[PREVIOUS](module_2/tas2_2.md)      [NEXT](module_3/module_3.md)
+[PREVIOUS](../module_2/tas2_2.md)      [NEXT](../module_3/module_3.md)
