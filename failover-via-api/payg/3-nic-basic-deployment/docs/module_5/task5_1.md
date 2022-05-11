@@ -67,4 +67,4 @@ F5 Automation Config Converter (ACC) is part of the F5 Automation Toolchain fami
 
 ACC translates per application and this gives the ability to modify from Common to a tenant specific AS3 declaration.
 
-[PREVIOUS](module_5/module_5.md)      [NEXT](module_6/module_6.md)
+[PREVIOUS](../module_5/module_5.md)      [NEXT](../module_6/module_6.md)

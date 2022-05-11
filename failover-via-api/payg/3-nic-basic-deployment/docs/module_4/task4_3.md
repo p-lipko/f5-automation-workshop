@@ -81,4 +81,4 @@ Be aware that with AS3 and FAST deployed applications can be modified through th
 
 Deleting deployed app services from a tenant can be done without interupting other deployed application services within that same tenant. FAST delivers
 
-[PREVIOUS](module_4/task4_2.md)      [NEXT](module_5/module_5.md)
+[PREVIOUS](../module_4/task4_2.md)      [NEXT](../module_5/module_5.md)

@@ -62,4 +62,4 @@ VIP-1 public address can be found via several ways:
 
 ![](../png/module4/task4_1_p11.png)
 
-[PREVIOUS](module_4/module_4.md)      [NEXT](module_4/task4_2.md)
+[PREVIOUS](../module_4/module_4.md)      [NEXT](../module_4/task4_2.md)

@@ -17,4 +17,4 @@ Journeys uses ACC as the engine to convert, but it comes with more capabilities 
 
 This workshop does not have F5 Journeys in scope, but if you want to know more: https://github.com/f5devcentral/f5-journeys
 
-[PREVIOUS](module_4/task4_3.md)      [NEXT](module_5/task5_1.md)
+[PREVIOUS](../module_4/task4_3.md)      [NEXT](../module_5/task5_1.md)

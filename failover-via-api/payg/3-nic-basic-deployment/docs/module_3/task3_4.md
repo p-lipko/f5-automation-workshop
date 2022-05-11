@@ -51,4 +51,4 @@ Questions:
 ## Use Case Summary
 POST = overwrite and by only declaring App_4 in the AS3 declaration we have just overwritten and deleted all the other deployed applications in tenant lab_2.
 
-[PREVIOUS](module_3/tas3_3.md)      [NEXT](module_3/task3_5.md)
+[PREVIOUS](../module_3/tas3_3.md)      [NEXT](../module_3/task3_5.md)

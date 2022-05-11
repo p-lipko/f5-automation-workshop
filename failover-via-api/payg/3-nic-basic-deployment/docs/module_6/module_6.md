@@ -11,4 +11,4 @@ What you will learn:
 * Updating BIG-IP TMOS.
 * (Troubleshooting)
 
-[PREVIOUS](module_5/task5_1.md)      [NEXT](module_6/task6_1.md)
+[PREVIOUS](../module_5/task5_1.md)      [NEXT](../module_6/task6_1.md)
