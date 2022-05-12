@@ -44,9 +44,9 @@ Question:
 ![](../png/module3/task3_4_p4.png)
 
 Questions:
-* Did you expectation in Step 2 became true?
+* Did your expectation in Step 2 became true?
 * What happened to the applications?
-* Why is the root cause of only seeing **App_4**?
+* What is the root cause of only seeing **App_4**?
 
 ## Use Case Summary
 POST = overwrite and by only declaring App_4 in the AS3 declaration we have just overwritten and deleted all the other deployed applications in tenant lab_2.

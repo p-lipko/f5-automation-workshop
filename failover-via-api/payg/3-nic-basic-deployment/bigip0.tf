@@ -231,7 +231,7 @@ resource "azurerm_linux_virtual_machine" "bigip0" {
   name                            = "${local.setup.azure.prefix}-bigip0"
   resource_group_name             = local.setup.azure.prefix
   location                        = local.setup.azure.location
-  size                            = local.setup.bigip.instance_type_2
+  size                            = local.setup.bigip.instance_type
   zone                            = 1
   disable_password_authentication = false
   admin_username                  = local.setup.bigip.user_name
@@ -239,10 +239,10 @@ resource "azurerm_linux_virtual_machine" "bigip0" {
   network_interface_ids           = [azurerm_network_interface.bigip0_management.id, azurerm_network_interface.bigip0_external.id, azurerm_network_interface.bigip0_internal.id]
   custom_data                     = base64encode(local.bigip_onboard0)
 
-  admin_ssh_key {
-    username   = local.setup.bigip.user_name
-    public_key = azurerm_ssh_public_key.f5_key.public_key
-  }
+  //admin_ssh_key {
+    //username   = local.setup.bigip.user_name
+    //public_key = azurerm_ssh_public_key.f5_key.public_key
+  //}
 
   identity {
     type = "SystemAssigned"

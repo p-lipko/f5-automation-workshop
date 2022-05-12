@@ -12,7 +12,7 @@ Non-UDF users can skip this section ans go straight to task1.2 which is about pe
     
 **Step 2:** In the Remote Desktop Connection popup select **‘Connect’**. Ignore the warning that the identity could not be verified and click **‘Yes’**.
 
-**Step 3:** Login to Ubuntu with ``f5student/f5student123``.
+**Step 3:** Login to Ubuntu with **f5student/f5student123**.
 
 ![](../png/module1/task1_1_p2.png)
 
@@ -36,20 +36,11 @@ This grabs the files we will going to use for the lab from Github and places the
 
 ![](../png/module1/task1_1_p5.png)
 
-```
-Note for F5-ers:
-At this point refresh the Azure credentials which can be found at /file/tmp.yml. When you don't know how to setup an Azure AD app registration and assign a role to it, please check the section 'Task1_0'.
-
-Non-F5 but invited students using UDF should not worry, this is arranged for you.
-```
-
 **Step 8:** Let’s open the folder in VSC, by selecting ![](../png/module1/task1_1_p6.png)
 
-in the left pane and in the Home directory select **‘cloud-automation-workshop’** and click **‘OK’**.
+in the left pane and in the Home directory select **cloud-automation-workshop > failover-via-api > payg > 3-nic-basic-deployment** and click **‘OK’**.
 
 ![](../png/module1/task1_1_p7.png)
-
-Expand the folder by selecting **'CLOUD-AUTOMATION-WORKSHOP'** and than select **'failover-via-api'**.
 
 The folder contains all the files to fire up the infrastructure in Azure public cloud by using terraform.
 
@@ -58,11 +49,7 @@ The folder contains all the files to fire up the infrastructure in Azure public 
 
 This workshop is built by using HashiCorp Terraform (https://www.terraform.io/) which is an open-source infrastructure as code software tool. Having a basic understanding how Terraform works will be beneficial for this course to better understand the taken steps, but if you don't have this knowledge, following the steps will get you through. Just take your time to understand what is happening.
 
-**Step 9:** In the terminal section, be sure you are in the directory ``cloud-automation-workshop`` and type the following and press enter:
-
-**cd failover-via-api/payg/3-nic-basic-deployment/**
-
-and
+**Step 9:** In the terminal section, be sure you are in the directory **3-nic-basic-deployment** and type the following and press enter:
 
 **cp setup_changeme.yml setup.yml**
 
@@ -78,15 +65,31 @@ and
 
 **Step 14:** Close the search and replace window and save the changes by pressing **‘Ctrl+S’**. Not saving the changes will make terraform fail!
 
-**Step 15:** In the terminal type: **terraform init**
- 
+**Step 15:** Before we can startup the infrastructure via Terraform we need to copy folder **files**.
+
+1. At the Jumphost select **Activities** and select **show applications** from the left pane and select **files**.
+
 ![](../png/module1/task1_1_p10.png)
+
+2. Copy the folder **files**
+
+![](../png/module1/task1_1_p11.png)
+
+3. In **files** select **cloud-automation-workshop > failover-via-api > payg > 3-nic-basic-deployment** and **paste** folder **files**.
+
+4. When folder **files** is pasted into folder **3-nic-basic-deployment**, you can close the 'files' window.
+
+![](../png/module1/task1_1_p12.png)
+
+**Step 16:** In the terminal type: **terraform init**
+ 
+![](../png/module1/task1_1_p13.png)
 
 You should see this output.
 
-**Step 16:** Next, type: **terraform plan**
+**Step 17:** Next, type: **terraform plan**
 
-**Step 17:** Finally type: **terraform apply -auto-approve**
+**Step 18:** Finally type: **terraform apply -auto-approve**
 
 Terraform will take about ~10min to deploy the infrastructure. Time for coffee!
 * After ~3 minutes you will see underneath output.
@@ -94,7 +97,7 @@ Terraform will take about ~10min to deploy the infrastructure. Time for coffee!
 
 After the 3 minutes you can login, but don't touch anything, otherwise you will disrupt the deployment process.
 
-![](../png/module1/task1_1_p11.png)
+![](../png/module1/task1_1_p14.png)
 
 When all is deployed, you should see this output.
 

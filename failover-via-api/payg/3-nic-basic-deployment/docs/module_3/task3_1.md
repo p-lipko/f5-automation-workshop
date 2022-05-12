@@ -1,7 +1,7 @@
 # 3.1 - Applications using shared /Common
 
 ## Use Case
-F5 BIG-IP configuration has setup historically within partion common and starting to move into the API deployment approach through F5 Automation Toolchain and AS3 in particular, new applciations will get deployed within their own tenant, but need to use objects in partion /Common.
+F5 BIG-IP configuration has setup historically within partion common and starting to move into the API deployment approach through F5 Automation Toolchain and AS3 in particular, new applications will get deployed within their own tenant, but need to use objects in partion /Common.
 
 Terraform is used to create the AS3 declared applications by using the bigip provider.
 
@@ -51,7 +51,7 @@ Check the deployed partitions:
 
 ![](../png/module3/task3_1_p4.png)
 
-Check the Virtual Servers per partion:
+Check the Virtual Servers per partition:
 
 ![](../png/module3/task3_1_p5.png)
 

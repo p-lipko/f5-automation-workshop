@@ -54,7 +54,7 @@ Since we used PATCH, let's use it this time to delete App_3 from tenant lab_2.
 
 ![](../png/module3/task3_3_p5.png)
 
-**Step 9:** In the **patchBody** change to "op": "remove".
+**Step 9:** In the **patchBody** change to **"op": "remove"** and save the change with **Ctrl+s**.
 
 
 ![](../png/module3/task3_3_p6.png)

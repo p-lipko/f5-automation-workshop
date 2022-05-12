@@ -63,4 +63,8 @@ and then select **cloud-automation-workshop > failover-via-api > payg > 3-nic-ba
 
 ## Terraform.tfstate
 
+Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures.
+
+More details or further read: https://www.terraform.io/language/state
+
 [PREVIOUS](../module_2/module_2.md)      [NEXT](../module_2/task2_2.md)

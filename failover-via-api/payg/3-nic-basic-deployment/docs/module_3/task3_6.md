@@ -16,7 +16,7 @@ Login BIG-IP with SSH and type:
 * Fill in your username and password.
 * Fill in management public IP address of one of the BIG-IPs 
 
-![](../png/module3/task3_5_p2.png)
+![](../png/module3/task3_6_p2.png)
 (Omitted output)
 
 **Step 3:** Scroll through the all the declared AS3 application services and try to read it.
@@ -63,7 +63,7 @@ Let's redeploy Terraform with **terraform apply -auto-approve** and watch the Te
 **Step 9:** In the same way we can delete an entire Tenant. Open file **use_case_6.tpl** once again and remove all applications so we create an empty tenant. Below you will find from what should be left from the template file. Save the file after the change with **'Ctrl+s'**.
 
 ```
-AS3 .json:
+AS3.json:
 {
     "class": "AS3",
     "action": "deploy",

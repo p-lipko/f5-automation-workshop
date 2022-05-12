@@ -8,6 +8,6 @@ Application Services Extension 3 or AS3 is an F5 open-source tool which has been
 
 FAST allows one to use the pre-canned templates which can be found on BIG-IP once the .rpm has been installed, but FAST delivers the liberty to create your own custom templates.
 
-For those how are less familiar with AS3 or want a further reading: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/
+For those who are less familiar with AS3 or want a further reading: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/
 
 [PREVIOUS](../module_2/tas2_3.md)      [NEXT](../module_3/task3_1.md)

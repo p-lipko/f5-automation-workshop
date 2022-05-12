@@ -38,6 +38,11 @@ Terraform deployed two BIG-IPs which are designed as a cluster using **Failover-
 
 In an on-prem situation we would have used GARP to support failover, but GARP is a Layer 2 protocol and public cloud does not support Layer 2 functionality.
 
+```
+Disclaimer:
+The fact that the BIG-IP design deployment 'Failover via-api' is being used throughhout his workshop is not a claim this is the 'F5' preferred design. F5 offers several designs through CSTv2 templates which all support of delivering F5 application services in their own respected way
+```
+
 F5 BIG-IP is able to communicate with te public cloud API backbone by using **Cloud Failover Extension (CFE)** that provides L3 failover functionality in cloud environments by triggering the cloud API. Without the use of CFE the BIG-IPs would act as a host on top of Azure public cloud and they wouldn't know from each others existence.
 
 ### Cloud Failover Extension
@@ -64,4 +69,4 @@ Using Cloud Failover Extension has three main benefits:
 
 You can read and explore more of Cloud Failover Extension at F5 Clouddocs: https://clouddocs.f5.com/products/extensions/f5-cloud-failover/latest/userguide/overview.html#
 
-[PREVIOUS](../module_2/tas2_1.md)      [NEXT](../module_2/task2_3.md)
+[PREVIOUS](../module_2/tas2_1.md)    [NEXT](../module_2/task2_3.md)

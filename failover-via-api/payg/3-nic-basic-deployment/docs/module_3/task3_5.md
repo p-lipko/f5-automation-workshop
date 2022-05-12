@@ -44,6 +44,6 @@ Testing:
 ![](../png/module3/task3_5_p3.png)
 
 ## Use Case Summary
-Changing a configuration or adding a new application with AS3 allways go with the POST HTTPS method.
+Changing a configuration or adding a new application with AS3 allways go with the POST HTTP method.
 
 [PREVIOUS](../module_3/tas3_4.md)      [NEXT](../module_3/task3_6.md)
