@@ -78,4 +78,4 @@ Checkout the pool and poolmember:
 ## Use Case Summary
 It shouldn't be a suprise that this task can easily accomplished and an AS3 declaration is able to deploy multiple different applications into one tenant to accomodate some logical representation like eg. production, test/development, etc.
 
-[PREVIOUS](../module_3/tas3_1.md)      [NEXT](../module_3/task3_3.md)
+[PREVIOUS](../module_3/task3_1.md)      [NEXT](../module_3/task3_3.md)
