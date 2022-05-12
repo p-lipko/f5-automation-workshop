@@ -230,6 +230,7 @@ resource "azurerm_linux_virtual_machine" "bigip0" {
   resource_group_name             = azurerm_resource_group.rg.name
   location                        = azurerm_resource_group.rg.location
   size                            = local.setup.bigip.instance_type
+  zone                            = 0
   disable_password_authentication = false
   admin_username                  = local.setup.bigip.user_name
   admin_password                  = local.setup.bigip.user_password
