@@ -7,7 +7,7 @@ Key aspect for day 1 modifications is the ability to add new applications and to
 Satisfied with the result to create new applications by using FAST, the ADC admin continues deploying new applications using FAST. Existing application **http-service** needs modification.
 
 
-**Step 1:** Before deploying the new applications with FAST you need to create a WAF policy on the BIG-IP via the GUI in partition Common. 
+**Step 1:** Before deploying the new applications with FAST you need to create a WAF policy on the BIG-IP via the GUI in partition **Common**. 
 
 The **simple-waf** template , used in **4.3-create-https-waf-app-via-fast.json**, only supports the use of existing WAF policies in partition Common. Therefore, we need to create a WAF policy via the BIG-IP GUI first.
 
@@ -15,14 +15,15 @@ Go to parttition /Common, name the WAF policy **new_waf_policy** and hit **Save*
 
 ![](../png/module4/task4_3_p1.png)
 
-**Step 2:** Repeat steps 3 and 4 for applications:
+**Step 2:** Repeat steps 3 and 4 for applications and use your **student number** to change the **IP address B octet** and save the changes with **Ctrl+s**:
 * 4.2-create-https-app-via-fast.json
 * 4.3-create-https-waf-app-via-fast.json
 After deploying both apps you should have these views on the BIG-IP.
 
 ```
 Note:
-Make sure the defined IP addresses are matching your defined CIDR and network octets. Align the given values with your student number.
+Make sure the defined IP addresses are matching your defined CIDR and network octets. 
+Align the given values with your student number.
 ```
 
 ![](../png/module4/task4_3_p2.png)
@@ -57,14 +58,15 @@ Change it from `10.x.1.21` to `10.x.1.29` and click **Deploy**.
 
 The poolmember will show 'red' because there is no real node behind, it's just being defined for expanding the config.
 
-**Step 6:** Next let's delete a complete app service and check how this goes. Go to the BIG-IP GUI F5 Applications Services Template section select **Applications** and select application **app1** and delete it.
+**Step 6:** Next, lets delete a complete app service and check how this goes. Go to the **BIG-IP GUI F5 Applications Services Template** section, select **Applications** and select application **app1** and delete it.
 
 Question:
 * Are other app services still available?
 
-**Step 7:** Delete another app by using cURL. Go to the BIG-IP CLI via SSH and deploy the following command in BIG-IP Shell. 
+**Step 7:** Delete another app by using cURL. Go to the BIG-IP CLI via SSH and deploy the following command in BIG-IP Shell. Change the **Username** and **Password** and make sure you include the **BIG-IP mgmt IP address**.
 
-**curl -sk -u auser:F5twister2020! -H "Accept: application/json" -H "Content-Type: application/json" -X DELETE https://`bigip-mgmt-pub-ip`/mgmt/shared/fast/applications/tenant1/http-service**
+**curl -sk -u username:password -H "Accept: application/json" -H "Content-Type: application/json" -X DELETE https://bigip-mgmt-pub-ip/mgmt/shared/fast/applications/tenant1/http-service**
+
 
 **Step 8:** Check via the BIG-IP GUI if the application **http-service** got removed.
 

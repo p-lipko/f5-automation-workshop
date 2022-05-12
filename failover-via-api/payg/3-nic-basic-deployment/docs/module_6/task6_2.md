@@ -15,7 +15,7 @@ This task will go through the testing of how Cloud failover functions during a f
 
 ```
 Note:
-When you want to use your own laptop to login to the BIg-IPs that's okay.
+When you want to use your own laptop to login to the BIG-IPs that's okay.
 ```
 
 **Step 3:** At both BIG-IP shell prompts type:
@@ -50,7 +50,9 @@ Question:
 
 ```
 Note:
-The Failover via-API in Azure taskes ~95s of failover time. This is far too long and not usable in production. But just be aware that both AWS and GCP do offer better failover times.
+The Failover via-API in Azure taskes ~95s of failover time. 
+This is far too long and not usable in production. 
+Just be aware that both AWS and GCP do offer better failover times.
 ```
 
 **Step 8:** Go back to your application in the browser and refresh it. 

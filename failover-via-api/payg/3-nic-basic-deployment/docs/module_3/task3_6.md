@@ -60,7 +60,7 @@ Let's redeploy Terraform with **terraform apply -auto-approve** and watch the Te
 ![](../png/module3/task3_6_p7.png)
 
 
-**Step 9:** In the same way we can delete an entire Tenant. Open file **use_case_6.tpl** once again and remove all applications so we create an empty tenant. Below you will find from what should be left from the template file. Save the file after the change with **'Ctrl+s'**.
+**Step 9:** In the same way we can delete an entire Tenant. Open file **use_case_6.tpl** once again and remove all applications so we create an empty tenant. Below you will find from what should be left from the template file (or just copy and paste AS3.json as ahown here in the guide). Save the file after the change with **'Ctrl+s'**.
 
 ```
 AS3.json:
@@ -81,7 +81,9 @@ AS3.json:
 ```
 
 Notice:
-* All applications are being removed.
+* Terraform will return with an error "Error: Provider produced inconsistent result after apply". This issue is reported and tracked: https://github.com/F5Networks/terraform-azure-bigip-module/issues/14
+
+* All applications and tenant are being removed, check the BIG-IP GUI.
 * The comma (**,**) after **"class": "Tenant"** has been removed to be syntactically correct.
 
 **Step 10:** Redeploy Terraform with **terraform apply -auto-approve** and login to the GUI of the BIG-IP and select the partitions section. Is **lab_2** Still there?

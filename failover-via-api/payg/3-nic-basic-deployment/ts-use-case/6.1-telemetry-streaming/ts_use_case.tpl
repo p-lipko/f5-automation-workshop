@@ -7,7 +7,7 @@
         "class": "ADC",
         "remark": "Autoscale",
         "label": "Autoscale",
-        "Tenant_1": {
+        "Tenant2": {
             "class": "Tenant",
             "Shared": {
                 "class": "Application",

@@ -26,11 +26,12 @@ In the opened field, fill in the BIG-IP **username@mgmt-pub-ip** and press enter
 Notice:
 * Once the BIG-IP connects to VSC via the F5 Extension, the BIG-IP config gets read and shown in the left pane.
 
-**Step 4:** Go back tofile **4.1-create-http-via-fast.json** and check the JSON body and the declared Virtual Server and poolmember. Make sure the defined IP addresses are matching your defined CIDR and network octets. Align the given values with your **student number**.
+**Step 4:** Go back to file **4.1-create-http-via-fast.json** and check the JSON body and the declared Virtual Server and poolmember. Make sure the defined IP addresses are matching your defined CIDR and network octets. Align the given values with your **student number**.
 
 **Step 5:** Once again select the file **4.1-create-http-via-fast.json**, select the JSON body and perform a right-click and select **Deploy FAST App**.
 
 ![](../png/module4/task4_2_p5.png)
+(Shown IP addresses will not be the same as yours, be sure to replace the B octet of the IP address with your **student number**)
 
 Deployment of the FAST template will generate an **Untitled-1** json response.
 
