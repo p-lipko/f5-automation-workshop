@@ -76,4 +76,4 @@ Question:
 Never use PATCH over a POST. Overwritting creates a declaration which is a single source of truth.
 AS3 PATCH has been used in combination with Terraform throughout this exercise. Remember that Terraform is a declarative automation tool and does not expect a PATCH method, but always a POST because this creates that the state file will always have the right status. The failure we have seen is caused by Terraform expecting a POST and not a PATCH. Yes, using another REST-API method would delete App_3 succesfully, but remember: "PATCH should never go over a POST".
 
-[PREVIOUS](../module_3/tas3_2.md)      [NEXT](../module_3/task3_4.md)
+[PREVIOUS](../module_3/task3_2.md)      [NEXT](../module_3/task3_4.md)

@@ -10,4 +10,4 @@ FAST allows one to use the pre-canned templates which can be found on BIG-IP onc
 
 For those who are less familiar with AS3 or want a further reading: https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/
 
-[PREVIOUS](../module_2/tas2_3.md)      [NEXT](../module_3/task3_1.md)
+[PREVIOUS](../module_2/task2_3.md)      [NEXT](../module_3/task3_1.md)
